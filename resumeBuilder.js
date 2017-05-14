@@ -190,6 +190,7 @@ function displayEducation() {
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
         $(".education-entry:last").append(formattedOnlineURL);
     }
+  }
 displayEducation();
 //clickLocations
 $(document).click(function(loc) {
