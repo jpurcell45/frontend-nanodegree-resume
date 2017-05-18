@@ -21,7 +21,7 @@ var work = {
             "description": "Operated the nuclear reactor on a submarine and maintained all nuclear electronic equipment."
         }
     ]
-}
+};
 //Above JSONlint passed
 //projects
 var projects = {
@@ -36,9 +36,10 @@ var projects = {
             "dates": "2016",
             "description": "Filler",
             "images": ["images/fry.jpg"]
+
         }
     ]
-}
+};
 //Above JSONlint passed
 //Bio
 var bio = {
@@ -53,7 +54,7 @@ var bio = {
         "location": "Oregon"
     },
     "skills": ["Results oriented", "Timely", "Accurate"]
-}
+};
 //Above JSONlint passed
 //education
 var education = {
@@ -88,12 +89,12 @@ var education = {
         }
 
     ]
-}
+};
 //Above JSONlint passed
 
 //Header
-var name = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(name);
+var nam = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(nam);
 var role = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").append(role);
 //Top contacts
@@ -117,7 +118,7 @@ $("#footerContacts").append(formattedLocation);
 //biopic
 var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
 $("#header").append(formattedBiopic);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage)
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcomeMsg);
 //Skills Section
 if (bio.skills.length > 0) {
@@ -179,15 +180,15 @@ function displayEducation() {
         $(".education-entry:last").append(formattedSchoolMajor);
     }
     $("#education").append(HTMLonlineClasses);
-    for (onlineClass in education.onlineClasses) {
+    for (i = 0; i < education.onlineClasses.length; i++) {
         $("#education").append(HTMLschoolStart);
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[i].title);
         $(".education-entry:last").append(formattedOnlineTitle);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[i].school);
         $(".education-entry:last").append(formattedOnlineSchool);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[i].dates);
         $(".education-entry:last").append(formattedOnlineDates);
-        var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
+        var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[i].url);
         $(".education-entry:last").append(formattedOnlineURL);
     }
 }
